@@ -1,0 +1,1 @@
+This folder contains all the scripts written during the lesson hours
