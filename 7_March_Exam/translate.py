@@ -10,14 +10,18 @@ def dna2rna(sq):
 
 # Given a sequence of DNA it returns the corresponding aminoacid sequence
 def translate(seq):
+	# Check that the sequence is DNA
 	try:
 		seq = seq.upper()
 		if all(c in sd.dna_symbols for c in seq): 
 			rna = dna2rna(seq)
+		# Initialise the protein sequence
 		prot = ''
+		# Select 3 characters at a time from rna and use them as key for the genetic_code dictionary
 		for e in range(0,len(rna),3):
 			prot += sd.genetic_code[rna[e:e+3]]
 		return prot
+	# If the sequence is not DNA it prints an error message
 	except:
 		print('the input sequence id not DNA')
 		return ''
